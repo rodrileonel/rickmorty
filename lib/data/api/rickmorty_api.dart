@@ -21,7 +21,6 @@ class RickMortyApi {
             'Content-Type': 'application/json',
           });
       if (response.statusCode == 200 || response.statusCode == 201) {
-        print(charactersResponseFromJson(response.body).info?.next);
         return Right(charactersResponseFromJson(response.body));
       } else {
         return Left(errorResponseFromJson(response.body));
